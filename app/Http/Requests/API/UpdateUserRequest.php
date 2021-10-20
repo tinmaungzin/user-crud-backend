@@ -9,11 +9,10 @@ class UpdateUserRequest extends APIRequest
 {
     public function rules()
     {
-        return [];
-//        return [
-//            'email' => ['email:rfc,dns',
-//                Rule::unique('users','email')->ignore($this->user->id)]
-//        ];
+        return [
+            'email' => ['email:rfc,dns',
+                Rule::unique('users','email')->ignore($this->user)]
+        ];
     }
     public function authorize()
     {
